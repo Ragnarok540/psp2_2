@@ -1,20 +1,20 @@
 from lector import leer_archivo
-from estadistica import beta_1, beta_0, r_xy, r2, y_k
+from ttr import very_small, small, medium, large, very_large
 from lista import largo
 import sys
 
-def main(ruta, x_k):
+def main(ruta):
     try:
         ls1, ls2 = leer_archivo(ruta)
         if largo(ls1) != largo(ls2):
             print(f"""ERROR: Las listas no son del mismo tamaño,
 tienen {largo(ls1)} y {largo(ls2)} elementos respectivamente.""")
             sys.exit()
-        print(f"beta_1: {beta_1(ls1, ls2)}")
-        print(f"beta_0: {beta_0(ls1, ls2)}")
-        print(f"r_xy: {r_xy(ls1, ls2)}")
-        print(f"r2: {r2(ls1, ls2)}")
-        print(f"y_k: {y_k(ls1, ls2, float(x_k))}")
+        print(f"very_small: {very_small(ls1, ls2)}")
+        print(f"small: {small(ls1, ls2)}")
+        print(f"medium: {medium(ls1, ls2)}")
+        print(f"large: {large(ls1, ls2)}")
+        print(f"very_large: {very_large(ls1, ls2)}")
     except ValueError:
         print("ERROR: Todos los parámetros deben ser números reales o enteros.")
         sys.exit()
@@ -24,8 +24,8 @@ tienen {largo(ls1)} y {largo(ls2)} elementos respectivamente.""")
 
 if __name__ == '__main__':
     try:
-        main(sys.argv[1], sys.argv[2])
+        main(sys.argv[1])
     except IndexError:
-        print("""ERROR: Se requieren dos parámetros, la ruta del archivo CSV
-y el valor x_k, por ejemplo: 'test.csv 386'.""")
+        print("""ERROR: Se requierela ruta del archivo CSV,
+por ejemplo: 'test1.csv'.""")
         sys.exit()

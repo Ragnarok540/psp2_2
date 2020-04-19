@@ -10,8 +10,6 @@ class LectorTestCase(unittest.TestCase):
 
         esperado = ((7.0, (12.0, (10.0, (12.0, (10.0, (12.0, (12.0, (12.0, (12.0, (8.0, (8.0, (8.0, (20.0, (14.0, (18.0, (12.0, None)))))))))))))))), (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, None)))))))))))))))))
         observado = lector.leer_archivo("test2.csv")
-
-        print(observado)
         self.assertEqual(esperado, observado)
 
         self.assertRaises(FileNotFoundError, lector.leer_archivo, "xyz.csv")
