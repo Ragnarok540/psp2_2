@@ -4,9 +4,14 @@ import lector
 class LectorTestCase(unittest.TestCase):
 
     def test_leer_archivo(self):
-        esperado = ((130.0, (650.0, (99.0, (150.0, (128.0, (302.0, (95.0, (945.0, (368.0, (961.0, None)))))))))),
-                    (186.0, (699.0, (132.0, (272.0, (291.0, (331.0, (199.0, (1890.0, (788.0, (1601.0, None)))))))))))
-        observado = lector.leer_archivo("test.csv")
+        esperado = ((18.0, (18.0, (25.0, (31.0, (37.0, (82.0, (82.0, (87.0, (89.0, (230.0, (85.0, (87.0, (558.0, None))))))))))))), (3.0, (3.0, (3.0, (3.0, (3.0, (5.0, (4.0, (4.0, (4.0, (10.0, (3.0, (3.0, (10.0, None))))))))))))))
+        observado = lector.leer_archivo("test1.csv")
+        self.assertEqual(esperado, observado)
+
+        esperado = ((7.0, (12.0, (10.0, (12.0, (10.0, (12.0, (12.0, (12.0, (12.0, (8.0, (8.0, (8.0, (20.0, (14.0, (18.0, (12.0, None)))))))))))))))), (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, (1.0, None)))))))))))))))))
+        observado = lector.leer_archivo("test2.csv")
+
+        print(observado)
         self.assertEqual(esperado, observado)
 
         self.assertRaises(FileNotFoundError, lector.leer_archivo, "xyz.csv")
