@@ -54,3 +54,21 @@ class TTRTestCase(unittest.TestCase):
         esperado = 19.928022473189497
         observado = ttr.very_large(self.l_t_2_a, self.l_t_2_b)
         self.assertEqual(esperado, observado)
+
+    def test__desv_log(self):
+        esperado = 0.6604943830454917
+        observado = ttr._desv_log(self.l_t_1_a, self.l_t_1_b)
+        self.assertEqual(esperado, observado)
+
+        esperado = 0.28640992566224327
+        observado = ttr._desv_log(self.l_t_2_a, self.l_t_2_b)
+        self.assertEqual(esperado, observado)
+
+    def test__prom_log(self):
+        esperado = 2.801517529591993
+        observado = ttr._prom_log(self.l_t_1_a, self.l_t_1_b)
+        self.assertEqual(esperado, observado)
+
+        esperado = 2.419307054354021
+        observado = ttr._prom_log(self.l_t_2_a, self.l_t_2_b)
+        self.assertEqual(esperado, observado)

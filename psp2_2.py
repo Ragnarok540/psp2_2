@@ -26,6 +26,6 @@ if __name__ == '__main__':
     try:
         main(sys.argv[1])
     except IndexError:
-        print("""ERROR: Se requierela ruta del archivo CSV,
+        print("""ERROR: Se requiere la ruta del archivo CSV,
 por ejemplo: 'test1.csv'.""")
         sys.exit()
